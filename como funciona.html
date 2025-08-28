@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Como Funciona — LocaDigital</title>
+  <meta name="description" content="Veja como a LocaDigital funciona: do briefing à assinatura e cobrança no NIDO em 3 passos simples. Saiba o que enviamos, prazos e entregáveis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    :root {
+      --primary: #1A4D8C;
+      --accent: #3E92CC;
+      --slate:  #6B7B8C;
+      --ink:    #0F172A;
+      --muted:  #475569;
+      --bg:     #F6F9FC;
+      --card:   #FFFFFF;
+      --ring:   rgba(26,77,140,.15);
+      --radius: 16px;
+      --shadow: 0 8px 30px rgba(2,6,23,.08);
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif; color:var(--ink); background:var(--bg); line-height:1.55; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    header { position: sticky; top:0; z-index: 40; backdrop-filter: blur(10px); background: rgba(246,249,252,.7); border-bottom: 1px solid #e5eef7; }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding: 14px 0; }
+    .brand { display:flex; align-items:center; gap: 12px; }
+    .brand svg { width: 160px; height: auto; }
+    .menu { display:flex; gap:16px; align-items:center; }
+    .menu a { color: var(--muted); font-weight:600; border-radius: 999px; padding: 8px 12px; }
+    .menu a.active { color: var(--primary); background: #ECF3FA; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; border-radius: 999px; padding: 12px 18px; font-weight:700; border: 1px solid transparent; transition:.2s; cursor:pointer; }
+    .btn.whats { background: var(--primary); color: #fff; }
+    .btn.whats:hover { transform: translateY(-1px); box-shadow: 0 6px 24px var(--ring); }
+    .btn.outline { background: transparent; border-color: var(--primary); color: var(--primary); }
+
+    .hero { padding: 64px 0 26px; background: radial-gradient(1200px 600px at 85% -10%, rgba(62,146,204,.14), transparent 60%), linear-gradient(180deg, #fff, #f7fbff); border-bottom:1px solid #e5eef7; }
+    .hero h1 { font-size: clamp(28px, 3.4vw, 44px); line-height:1.1; margin:0 0 10px; letter-spacing:-.02em; }
+    .subtitle { color: var(--muted); font-size: clamp(16px, 1.6vw, 18px); }
+    .pill { display:inline-flex; align-items:center; gap:8px; background: #ECF3FA; color: var(--primary); padding:8px 12px; border-radius: 999px; font-weight:700; margin-bottom: 14px; }
+
+    main section { padding: 52px 0; }
+    h2 { font-size: clamp(22px, 2.4vw, 28px); margin:0 0 8px; }
+    .kicker { color: var(--slate); font-weight:800; letter-spacing:.08em; text-transform: uppercase; font-size: 12px; }
+    .grid-3 { display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .card { background: var(--card); border:1px solid #e5eef7; border-radius: var(--radius); box-shadow: var(--shadow); padding: 20px; }
+    .step { position:relative; }
+    .step .num { position:absolute; top:-14px; left:-14px; width: 32px; height:32px; border-radius: 50%; background: var(--accent); color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center; box-shadow: var(--shadow); }
+    .step h3 { margin: 10px 0 6px; font-size: 18px; }
+    .muted { color: var(--muted); }
+
+    .timeline { position:relative; padding-left: 22px; display:grid; gap:12px; }
+    .timeline::before { content:""; position:absolute; left:8px; top:0; bottom:0; width: 2px; background: #dbe7f6; }
+    .t-item { position:relative; background:#fff; border:1px solid #e5eef7; border-radius: 12px; padding: 12px 14px; }
+    .t-item::before { content:""; position:absolute; left:-18px; top:12px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+
+    .list { display:grid; gap: 10px; margin: 12px 0 0; }
+    .list li { display:flex; gap:10px; align-items:flex-start; background: #fff; border:1px solid #e5eef7; padding: 12px 14px; border-radius: 12px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-top: 6px; flex:0 0 10px; }
+
+    .cta-band { background: #0f172a; color:#fff; border-radius: 16px; padding: 22px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .cta-band .btn { border-color:#fff; }
+
+    footer { padding: 28px 0 56px; color: var(--muted); }
+
+    @media (max-width: 940px) {
+      .grid-3 { grid-template-columns: 1fr; }
+      header { position: static; }
+      .brand svg { width: 140px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Como funciona a LocaDigital",
+    "description": "Do briefing à assinatura e cobrança via NIDO em 3 passos.",
+    "step": [
+      {"@type": "HowToStep", "name": "Cadastro e briefing", "text": "Envie dados do imóvel e escolha garantias. Receba o checklist e o canal de atendimento."},
+      {"@type": "HowToStep", "name": "Análise + minuta", "text": "Conferimos documentos e redigimos a minuta com cláusulas essenciais."},
+      {"@type": "HowToStep", "name": "Assinatura + cobrança", "text": "Acompanhamos a assinatura eletrônica e ativamos a cobrança no NIDO."}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" title="Voltar ao início">
+        <!-- Logo inline -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" aria-label="LocaDigital">
+          <g transform="translate(20, 20)">
+            <path d="M0 25 L30 0 L60 25 L55 25 L55 55 L5 55 L5 25 Z" fill="#1A4D8C" />
+            <rect x="15" y="30" width="10" height="10" rx="1" fill="white" />
+            <rect x="35" y="30" width="10" height="10" rx="1" fill="white" />
+            <path d="M25 55 L25 40 Q25 38 27 38 L33 38 Q35 38 35 40 L35 55 Z" fill="white" />
+            <g transform="translate(45, 40)">
+              <circle cx="6" cy="6" r="6" fill="#3E92CC" />
+              <rect x="6" y="5" width="15" height="2" fill="#3E92CC" />
+              <path d="M15 2 L15 10 L19 10 L19 7 L22 7 L22 10 L25 10 L25 2 Z" fill="#3E92CC" />
+            </g>
+          </g>
+          <text x="95" y="55" font-family="Georgia, serif" font-size="28" font-weight="600" fill="#1A4D8C">LocaDigital</text>
+          <text x="95" y="70" font-family="Georgia, serif" font-size="10" font-style="italic" fill="#6B7B8C">Gestão de Locações</text>
+        </svg>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="como-funciona.html" class="active">Como Funciona</a>
+        <a href="index.html#precos">Preços</a>
+        <a id="whats-top" class="btn outline" href="https://wa.me/YOUR_WHATSAPP?text=Ol%C3%A1%21%20Quero%20entender%20como%20funciona%20a%20LocaDigital." target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="pill">Análise • Contrato • Cobrança</div>
+      <h1>Como funciona a LocaDigital</h1>
+      <p class="subtitle">Do briefing à assinatura e à cobrança no NIDO em <strong>3 passos simples</strong>. Transparente, ágil e alinhado ao seu resultado.</p>
+      <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap;">
+        <a class="btn whats" id="whats-hero" href="https://wa.me/YOUR_WHATSAPP?text=Quero%20come%C3%A7ar%20o%20processo%20com%20a%20LocaDigital." target="_blank" rel="noopener">Começar pelo WhatsApp</a>
+        <a class="btn outline" href="#passos">Ver os passos</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="passos">
+      <div class="container">
+        <h2>Os 3 passos</h2>
+        <div class="grid-3" style="margin-top:14px;">
+          <div class="card step">
+            <div class="num">1</div>
+            <div class="kicker">Cadastro e briefing</div>
+            <h3>Você envia os dados do imóvel</h3>
+            <p class="muted">Formulário ou WhatsApp. Escolhemos a garantia (caução, fiador, seguro-fiança) e definimos condições básicas (aluguel, reajuste, prazos).</p>
+            <ul class="list">
+              <li><span class="dot"></span><div><strong>Checklist</strong> com documentos do locador, locatário e do imóvel</div></li>
+              <li><span class="dot"></span><div><strong>Canal de atendimento</strong> dedicado no WhatsApp</div></li>
+              <li><span class="dot"></span><div><strong>Prazo estimado:</strong> 0–1 dia útil</div></li>
+            </ul>
+          </div>
+          <div class="card step">
+            <div class="num">2</div>
+            <div class="kicker">Análise + minuta</div>
+            <h3>Conferimos documentos e redigimos o contrato</h3>
+            <p class="muted">Validamos identidade, capacidade e garantias. Elaboramos a <strong>minuta LocaDigital</strong> com cláusulas essenciais e campos editáveis.</p>
+            <ul class="list">
+              <li><span class="dot"></span><div><strong>Cláusulas-chave:</strong> garantias, multas/juros, reajuste, vistoria, responsabilidades</div></li>
+              <li><span class="dot"></span><div><strong>Entrega:</strong> minuta em Word/PDF + resumo dos pontos críticos</div></li>
+              <li><span class="dot"></span><div><strong>Prazo estimado:</strong> 1–2 dias úteis</div></li>
+            </ul>
+          </div>
+          <div class="card step">
+            <div class="num">3</div>
+            <div class="kicker">Assinatura + cobrança</div>
+            <h3>Assinatura eletrônica e NIDO ativado</h3>
+            <p class="muted">Acompanhamos a assinatura eletrônica e ativamos a cobrança via NIDO (PIX/boletos), com <strong>recibos</strong> e <strong>repasses</strong> ao locador.</p>
+            <ul class="list">
+              <li><span class="dot"></span><div><strong>Emissão</strong> das cobranças e configuração das datas</div></li>
+              <li><span class="dot"></span><div><strong>Relatórios</strong> mensais e suporte pelo WhatsApp</div></li>
+              <li><span class="dot"></span><div><strong>Go‑live:</strong> imediatamente após a assinatura</div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="linha-do-tempo">
+      <div class="container">
+        <h2>Linha do tempo (estimativa)</h2>
+        <div class="timeline" style="margin-top:12px;">
+          <div class="t-item"><strong>D0</strong> — Briefing + envio de documentos</div>
+          <div class="t-item"><strong>D0–D1</strong> — Análise de documentação e validações</div>
+          <div class="t-item"><strong>D1–D2</strong> — Redação/ajustes da minuta e aprovação</div>
+          <div class="t-item"><strong>D2</strong> — Assinatura eletrônica (todas as partes)</div>
+          <div class="t-item"><strong>D2–D3</strong> — Configuração de cobrança no NIDO, recibos e repasses</div>
+        </div>
+        <p class="muted" style="margin-top:10px;">Obs.: prazos podem variar conforme garantia escolhida e velocidade de envio dos documentos.</p>
+      </div>
+    </section>
+
+    <section id="documentos">
+      <div class="container">
+        <h2>Documentos necessários</h2>
+        <div class="grid-3" style="margin-top:14px;">
+          <div class="card">
+            <div class="kicker">Locador</div>
+            <ul class="list">
+              <li><span class="dot"></span><div>RG e CPF (ou CNH)</div></li>
+              <li><span class="dot"></span><div>Comprovante de endereço</div></li>
+              <li><span class="dot"></span><div>Dados bancários para repasse</div></li>
+              <li><span class="dot"></span><div>Título de propriedade / matrícula (se disponível)</div></li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="kicker">Locatário (PF)</div>
+            <ul class="list">
+              <li><span class="dot"></span><div>RG e CPF (ou CNH)</div></li>
+              <li><span class="dot"></span><div>Comprovantes de renda (holerites/extrato/IR)</div></li>
+              <li><span class="dot"></span><div>Comprovante de endereço</div></li>
+              <li><span class="dot"></span><div>Dados da garantia escolhida</div></li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="kicker">Locatário (PJ)</div>
+            <ul class="list">
+              <li><span class="dot"></span><div>Contrato/Estatuto + últimas alterações</div></li>
+              <li><span class="dot"></span><div>Cartão CNPJ e documentos do(s) representante(s)</div></li>
+              <li><span class="dot"></span><div>Comprovantes de faturamento</div></li>
+              <li><span class="dot"></span><div>Dados da garantia escolhida</div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="garantias">
+      <div class="container">
+        <h2>Garantias aceitas</h2>
+        <div class="grid-3" style="margin-top:14px;">
+          <div class="card">
+            <div class="kicker">Caução</div>
+            <p class="muted">Depósito caução (até 3 aluguéis) com recibo. Resgate conforme condições contratuais e vistoria.</p>
+          </div>
+          <div class="card">
+            <div class="kicker">Fiador</div>
+            <p class="muted">Fiador com comprovação de renda e imóvel (quando aplicável). Conferência documental completa.</p>
+          </div>
+          <div class="card">
+            <div class="kicker">Seguro-fiança</div>
+            <p class="muted">Contratação com seguradora. Aprovação de crédito e emissão da apólice como condição para a assinatura.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="assinatura-cobranca">
+      <div class="container">
+        <h2>Assinatura e cobrança</h2>
+        <div class="grid-3" style="margin-top:14px;">
+          <div class="card">
+            <div class="kicker">Assinatura eletrônica</div>
+            <p class="muted">Acompanhamos o fluxo de assinaturas com trilha de auditoria e armazenamento seguro do contrato.</p>
+          </div>
+          <div class="card">
+            <div class="kicker">NIDO Ativado</div>
+            <p class="muted">Configuração das cobranças (PIX/boletos), emissão de <strong>recibos</strong> e <strong>repasses</strong> automáticos ao locador.</p>
+          </div>
+          <div class="card">
+            <div class="kicker">Suporte</div>
+            <p class="muted">Canal WhatsApp para dúvidas e ajustes durante a vigência, dentro do escopo de administração (5%/mês).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta-final">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <div class="kicker" style="color:#a2b5cd;">Pronto para começar?</div>
+            <h3 style="margin:4px 0 0;">Envie seus dados e receba a minuta em poucos dias</h3>
+            <p class="muted" style="color:#c7d2fe; margin:6px 0 0;">Taxas: 30% de êxito + 5%/mês (administração). Sem exclusividade.</p>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <a class="btn whats" href="https://wa.me/YOUR_WHATSAPP?text=Quero%20iniciar%20meu%20processo%20na%20LocaDigital." target="_blank" rel="noopener">Falar no WhatsApp</a>
+            <a class="btn outline" href="index.html#form">Ir para o formulário</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+      <div>© 2025 LocaDigital</div>
+      <div class="muted">Análise • Contrato • Cobrança</div>
+    </div>
+  </footer>
+
+  <script>
+    // Número do WhatsApp configurado
+    const WHATS_NUMBER = '5511999482063';
+    for (const a of document.querySelectorAll('a[href*="wa.me/YOUR_WHATSAPP"]')) {
+      a.href = a.href.replace('YOUR_WHATSAPP', WHATS_NUMBER);
+    }
+  </script>
+</body>
+</html>
